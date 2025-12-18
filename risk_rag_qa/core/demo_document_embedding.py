@@ -11,8 +11,8 @@ load_dotenv()
 # 1. 加载CSV为Document
 # 注意：Milvus字段名不支持中文，需要将中文字段名映射为英文
 loader = RiskCSVLoader(
-    file_path="../data/processed/亚马逊法规库_20250919.csv",
-    content_columns=["受限品", "关键词"],
+    file_path="../data/processed/处理后产品库标题向量数据.csv",
+    content_columns=["lib_main_sku", "关键词"],
     metadata_columns=["受限品", "URL"]
 )
 documents = loader.load()
@@ -39,7 +39,7 @@ embeddings = AzureOpenAIEmbeddings(
     azure_deployment=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT"),
     api_key=os.getenv("AZURE_OPENAI_API_KEY"),
     api_version=os.getenv("AZURE_OPENAI_API_VERSION")
-    em
+
 
 )
 # ai code end

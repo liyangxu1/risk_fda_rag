@@ -25,7 +25,7 @@ vector_store = Milvus(
         "password": os.getenv("MILVUS_PASSWORD"),
         "db_name": os.getenv("MILVUS_DB_NAME")
     },
-    collection_name="amazon_regulations"
+    collection_name="liangou_regulations"
 )
 
 # 3. 检索测试
@@ -53,7 +53,7 @@ def search(query: str, top_k: int = 10):
 
 if __name__ == "__main__":
     # 测试检索
-    search("alcohol beer wine", top_k=10)
+    search("蛋糕", top_k=10)
     
     # 可以尝试其他查询
     # search("medical device", top_k=10)
