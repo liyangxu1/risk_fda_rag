@@ -53,7 +53,8 @@ def search(query: str, top_k: int = 10):
 
 if __name__ == "__main__":
     # 测试检索
-    search("蛋糕", top_k=10)
+    while True:
+        search(input("输入检索关键词:"), top_k=10)
     
     # 可以尝试其他查询
     # search("medical device", top_k=10)
